@@ -8,5 +8,7 @@ namespace BlazorApp.Models
         public string Username { get; set; }
         public string Token { get; set; }
         public bool IsDeleting { get; set; }
+
+        public int Balance {get; set; }
     }
 }

@@ -66,6 +66,7 @@ namespace BlazorApp.Helpers
                     Username = user.Username,
                     FirstName = user.FirstName,
                     LastName = user.LastName,
+                    Balance = user.Balance,
                     Token = "fake-jwt-token"
                 });
             }
@@ -83,7 +84,8 @@ namespace BlazorApp.Helpers
                     Username = body.Username,
                     Password = body.Password,
                     FirstName = body.FirstName,
-                    LastName = body.LastName
+                    LastName = body.LastName,
+                    Balance = 0
                 };
 
                 users.Add(user);
@@ -189,7 +191,8 @@ namespace BlazorApp.Helpers
                     Id = user.Id.ToString(),
                     Username = user.Username,
                     FirstName = user.FirstName,
-                    LastName = user.LastName
+                    LastName = user.LastName,
+                    Balance = user.Balance
                 };
             }
         }
@@ -203,5 +206,7 @@ namespace BlazorApp.Helpers
         public string LastName { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+
+        public int Balance {get; set; }
     }
 }

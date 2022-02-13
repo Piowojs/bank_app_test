@@ -17,7 +17,6 @@ namespace BlazorApp
 
             builder.Services
                 .AddScoped<IAccountService, AccountService>()
-                .AddScoped<IAlertService, AlertService>()
                 .AddScoped<IHttpService, HttpService>()
                 .AddScoped<ILocalStorageService, LocalStorageService>();
 

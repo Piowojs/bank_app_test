@@ -1,6 +1,5 @@
 ﻿@page "/users/add"
 @attribute [Authorize]
-@inject IAlertService AlertService
 @inject IAccountService AccountService
 @inject NavigationManager NavigationManager
 
@@ -53,12 +52,12 @@
         try
         {
             await AccountService.Register(model);
-            AlertService.Success("User added successfully", keepAfterRouteChange: true);
+          
             NavigationManager.NavigateTo("users");
         }
-        catch (Exception ex)
+        catch
         {
-            AlertService.Error(ex.Message);
+         
             loading = false;
             StateHasChanged();
         }

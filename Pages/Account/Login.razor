@@ -1,6 +1,6 @@
 ﻿@page "/account/login"
 @inject IAccountService AccountService
-@inject IAlertService AlertService
+
 @inject NavigationManager NavigationManager
 
 <div class="card">
@@ -36,8 +36,7 @@
 
     private async void OnValidSubmit()
     {
-        // reset alerts on submit
-        AlertService.Clear();
+        
 
         loading = true;
         try
@@ -46,9 +45,8 @@
             var returnUrl = NavigationManager.QueryString("returnUrl") ?? "";
             NavigationManager.NavigateTo(returnUrl);
         }
-        catch (Exception ex)
+        catch
         {
-            AlertService.Error(ex.Message);
             loading = false;
             StateHasChanged();
         }

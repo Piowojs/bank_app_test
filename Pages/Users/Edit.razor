@@ -1,6 +1,6 @@
 ﻿@page "/users/edit/{Id}"
 @attribute [Authorize]
-@inject IAlertService AlertService
+
 @inject IAccountService AccountService
 @inject NavigationManager NavigationManager
 
@@ -74,12 +74,12 @@ else
         try
         {
             await AccountService.Update(Id, model);
-            AlertService.Success("Update successful", keepAfterRouteChange: true);
+           
             NavigationManager.NavigateTo("users");
         }
-        catch (Exception ex)
+        catch
         {
-            AlertService.Error(ex.Message);
+          
             loading = false;
             StateHasChanged();
         }

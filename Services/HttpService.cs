@@ -131,7 +131,6 @@ namespace BlazorApp.Services
 
             var options = new JsonSerializerOptions();
             options.PropertyNameCaseInsensitive = true;
-            options.Converters.Add(new StringConverter());
             return await response.Content.ReadFromJsonAsync<T>(options);
         }
 
